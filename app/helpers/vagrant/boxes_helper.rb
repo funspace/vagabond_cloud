@@ -1,0 +1,2 @@
+module Vagrant::BoxesHelper
+end

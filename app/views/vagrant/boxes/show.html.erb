@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vagrant_box.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @vagrant_box.description %>
+</p>
+
+<p>
+  <strong>Short description:</strong>
+  <%= @vagrant_box.short_description %>
+</p>
+
+<p>
+  <strong>Versions:</strong>
+  <%= @vagrant_box.versions %>
+</p>
+
+<%= link_to 'Edit', edit_vagrant_box_path(@vagrant_box) %> |
+<%= link_to 'Back', vagrant_boxes_path %>

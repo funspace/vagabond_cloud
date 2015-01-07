@@ -1,0 +1,37 @@
+<%= form_for(@vagrant_box_version) do |f| %>
+  <% if @vagrant_box_version.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vagrant_box_version.errors.count, "error") %> prohibited this vagrant_box_version from being saved:</h2>
+
+      <ul>
+      <% @vagrant_box_version.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :version %><br>
+    <%= f.text_field :version %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :description_html %><br>
+    <%= f.text_area :description_html %>
+  </div>
+  <div class="field">
+    <%= f.label :description_markdown %><br>
+    <%= f.text_area :description_markdown %>
+  </div>
+  <div class="field">
+    <%= f.label :providers_id %><br>
+    <%= f.text_field :providers_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

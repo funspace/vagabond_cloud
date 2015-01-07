@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  namespace :vagrant do
+    namespace :box do
+      resources :providers
+    end
+  end
+
+  namespace :vagrant do
+    namespace :box do
+      resources :versions
+    end
+  end
+
+  namespace :vagrant do
+    resources :boxes
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

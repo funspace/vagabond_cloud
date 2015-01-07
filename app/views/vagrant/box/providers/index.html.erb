@@ -1,0 +1,27 @@
+<h1>Listing vagrant_box_providers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vagrant_box_providers.each do |vagrant_box_provider| %>
+      <tr>
+        <td><%= vagrant_box_provider.name %></td>
+        <td><%= vagrant_box_provider.url %></td>
+        <td><%= link_to 'Show', vagrant_box_provider %></td>
+        <td><%= link_to 'Edit', edit_vagrant_box_provider_path(vagrant_box_provider) %></td>
+        <td><%= link_to 'Destroy', vagrant_box_provider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Provider', new_vagrant_box_provider_path %>

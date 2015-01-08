@@ -1,28 +1,28 @@
-class Vagrant::Box::ProvidersController < ApplicationController
+class Vagrant::Boxes::ProvidersController < ApplicationController
   before_action :set_vagrant_box_provider, only: [:show, :edit, :update, :destroy]
 
-  # GET /vagrant/box/providers
-  # GET /vagrant/box/providers.json
+  # GET /vagrant/boxes/providers
+  # GET /vagrant/boxes/providers.json
   def index
     @vagrant_box_providers = Vagrant::Box::Provider.all
   end
 
-  # GET /vagrant/box/providers/1
-  # GET /vagrant/box/providers/1.json
+  # GET /vagrant/boxes/providers/1
+  # GET /vagrant/boxes/providers/1.json
   def show
   end
 
-  # GET /vagrant/box/providers/new
+  # GET /vagrant/boxes/providers/new
   def new
     @vagrant_box_provider = Vagrant::Box::Provider.new
   end
 
-  # GET /vagrant/box/providers/1/edit
+  # GET /vagrant/boxes/providers/1/edit
   def edit
   end
 
-  # POST /vagrant/box/providers
-  # POST /vagrant/box/providers.json
+  # POST /vagrant/boxes/providers
+  # POST /vagrant/boxes/providers.json
   def create
     @vagrant_box_provider = Vagrant::Box::Provider.new(vagrant_box_provider_params)
 
@@ -37,8 +37,8 @@ class Vagrant::Box::ProvidersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /vagrant/box/providers/1
-  # PATCH/PUT /vagrant/box/providers/1.json
+  # PATCH/PUT /vagrant/boxes/providers/1
+  # PATCH/PUT /vagrant/boxes/providers/1.json
   def update
     respond_to do |format|
       if @vagrant_box_provider.update(vagrant_box_provider_params)
@@ -51,8 +51,8 @@ class Vagrant::Box::ProvidersController < ApplicationController
     end
   end
 
-  # DELETE /vagrant/box/providers/1
-  # DELETE /vagrant/box/providers/1.json
+  # DELETE /vagrant/boxes/providers/1
+  # DELETE /vagrant/boxes/providers/1.json
   def destroy
     @vagrant_box_provider.destroy
     respond_to do |format|

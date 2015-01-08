@@ -4,7 +4,6 @@ class CreateVagrantBoxes < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :short_description
-      t.references :versions, index: true
 
       t.timestamps
     end

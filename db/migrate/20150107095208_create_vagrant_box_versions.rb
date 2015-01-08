@@ -5,7 +5,7 @@ class CreateVagrantBoxVersions < ActiveRecord::Migration
       t.string :status
       t.text :description_html
       t.text :description_markdown
-      t.references :providers, index: true
+      t.references :boxes, index: true
 
       t.timestamps
     end

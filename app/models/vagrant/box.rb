@@ -1,3 +1,3 @@
 class Vagrant::Box < ActiveRecord::Base
-  belongs_to :versions
+  has_many :versions
 end

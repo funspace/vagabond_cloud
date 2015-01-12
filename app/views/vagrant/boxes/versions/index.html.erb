@@ -1,4 +1,4 @@
-<h1>Listing vagrant_box_versions</h1>
+<h1><%= @vagrant_box %> Listing vagrant_box_versions</h1>
 
 <table>
   <thead>
@@ -20,9 +20,9 @@
         <td><%= vagrant_box_version.description_html %></td>
         <td><%= vagrant_box_version.description_markdown %></td>
         <td><%= vagrant_box_version.providers %></td>
-        <td><%= link_to 'Show', vagrant_box_version %></td>
-        <td><%= link_to 'Edit', edit_vagrant_box_version_path(vagrant_box_version) %></td>
-        <td><%= link_to 'Destroy', vagrant_box_version, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', vagrant_box_version_path(@vagrant_box, vagrant_box_version) %></td>
+        <td><%= link_to 'Edit', edit_vagrant_box_version_path(@vagrant_box, vagrant_box_version) %></td>
+        <td><%= link_to 'Destroy', vagrant_box_version_path(@vagrant_box, vagrant_box_version), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

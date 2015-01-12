@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   namespace :vagrant do
     resources :boxes do
-      resources :versions do
-        resources :providers
+      resources :versions, module: 'boxes' do
+        resources :providers, module: 'versions'
       end
     end
   end

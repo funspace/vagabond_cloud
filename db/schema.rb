@@ -13,27 +13,27 @@
 
 ActiveRecord::Schema.define(version: 20150107095501) do
 
-  create_table "vagrant_box_providers", force: true do |t|
+  create_table "vagrant_box_version_providers", force: true do |t|
     t.string   "name"
     t.string   "url"
-    t.integer  "versions_id"
+    t.integer  "version_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "vagrant_box_providers", ["versions_id"], name: "index_vagrant_box_providers_on_versions_id"
+  add_index "vagrant_box_version_providers", ["version_id"], name: "index_vagrant_box_version_providers_on_version_id"
 
   create_table "vagrant_box_versions", force: true do |t|
     t.string   "version"
     t.string   "status"
     t.text     "description_html"
     t.text     "description_markdown"
-    t.integer  "boxes_id"
+    t.integer  "box_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "vagrant_box_versions", ["boxes_id"], name: "index_vagrant_box_versions_on_boxes_id"
+  add_index "vagrant_box_versions", ["box_id"], name: "index_vagrant_box_versions_on_box_id"
 
   create_table "vagrant_boxes", force: true do |t|
     t.string   "name"

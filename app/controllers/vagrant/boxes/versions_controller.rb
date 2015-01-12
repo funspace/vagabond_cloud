@@ -1,8 +1,9 @@
 class Vagrant::Boxes::VersionsController < ApplicationController
+  before_action :set_vagrant_box
   before_action :set_vagrant_box_version, only: [:show, :edit, :update, :destroy]
 
-  # GET /vagrant/boxes/versions
-  # GET /vagrant/boxes/versions.json
+  # GET /vagrant/boxes/1/versions
+  # GET /vagrant/boxes/1/versions.json
   def index
     @vagrant_box_versions = Vagrant::Box::Version.all
   end
@@ -15,6 +16,7 @@ class Vagrant::Boxes::VersionsController < ApplicationController
   # GET /vagrant/boxes/versions/new
   def new
     @vagrant_box_version = Vagrant::Box::Version.new
+    @vagrant_box_version.box_id = params[:box_id]
   end
 
   # GET /vagrant/boxes/versions/1/edit
@@ -62,6 +64,9 @@ class Vagrant::Boxes::VersionsController < ApplicationController
   end
 
   private
+    def set_vagrant_box
+      @vagrant_box = Vagrant::Box.find(params[:box_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_vagrant_box_version
       @vagrant_box_version = Vagrant::Box::Version.find(params[:id])
@@ -69,6 +74,6 @@ class Vagrant::Boxes::VersionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vagrant_box_version_params
-      params.require(:vagrant_box_version).permit(:version, :status, :description_html, :description_markdown, :providers_id)
+      params.require(:vagrant_box_version).permit(:version, :status, :description_html, :description_markdown, :box_id)
     end
 end
